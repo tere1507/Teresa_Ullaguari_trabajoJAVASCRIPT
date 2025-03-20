@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /*overflow-x: hidden; *//*atributo para ocultar el scroll mejor solucion es colocar container-fluid*/
+}
+body, html {/*aplicamos estos atributos en los elementos body y html para evitar scroll indeceados*/
+    margin: 0;
+    padding: 0;
+}
+.nombre {
+    color: rgb(17, 154, 227);
+    font-weight: bold;/*negrita*/
+    font-size: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+a {
+    width: 100%;
+    color: rgb(27, 154, 234);
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    /* overflow: hidden; */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.button {
+    color: aqua;
+    font-weight: bold;
+}
+/* .button {
+    color: rgb(17, 154, 227);
+} */
+a:hover {
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(186, 13, 108);
+} 
+.footer {
+    color: rgb(17, 154, 227);
+}
+.parrafo, .lista,.address {
+    text-align: center;
+}
+.programa {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(27, 154, 234);
+    font-weight: bold;
+    text-align: center;
+}
+.p-3 {
+    color: purple;
+}
+.datos-sec-1, .datos-sec-3 {
+    background-color: rgb(154, 152, 152);
+    color: white;
+}
+.datos-sec-2 {
+    background-color: rgb(200, 197, 197);
+    color: white;
+}
+img {
+    max-width: 100%;/*junto con <img src="..." class="img-fluid"> scc max-width: 100% las imagenes no saldran de los contenedores*/
+}
+.img-footer {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    float: left;
+    align-items: center;
+}
+.mostrarAviso:hover + .avisolegal {
+    display: block;
+}
+.avisolegal {
+    /* estilo de aviso legal*/
+    display: none;/*inicialmente oculto*/
+    border: 1px solid black;
+    color: aliceblue;
+}
+.mostrarAviso{
+    background-color: #0088ff;
+}
+.error {
+    border: 1px solid purple;
+}
+
+.error-message{
+    color: purple;
+    font-size: 0.8em; /* Establece el tamaño de la fuente al 80% del tamaño de fuente predeterminado. */
+    display: block; /* Hace que el elemento se muestre como un bloque, ocupando todo el ancho disponible. */
+}
+/*para encerrar cada div dentro de un cuadro y escribir entre la linea del div*/
+.formulario, .presupuesto, .condiciones, .contacto {
+    border: 2px solid black;
+    padding: 20px;
+    position: relative; /* Importante para el posicionamiento absoluto mas abajo, Necesario para posicionar los pseudo-elementos */
+    margin-bottom: 20px; 
+    background-color: whitesmoke;
+  }
+  
+  .datosPersonales, .presupuestoCostos, .condicionesEnvio, .contactoTer {
+    background-color: white; /* el color de fondo de tu página */
+    padding: 0 10px; /* Espacio alrededor del texto */
+    position: absolute;
+    top: -10px; /* Ajusta la posición vertical */
+    font-weight: bold;
+    color: blue;
+  }
+  label, input, select, fieldset {/*para dar espacio y eliminar los <br>*/
+    margin-bottom: 10px; 
+  }
+  h6, h5 {
+    font-weight: bold;
+    color: blue;
+  }
+  .reset:hover, .submit:hover {
+    color: white;
+    background-color: #0088ff;
+  }
+  .reset, .submit{
+    background-color: rgb(219, 217, 217);
+  }
+
+  .contactoInfo {
+    padding: 20px;
+    margin-top: 20px;
+  }
+ 
+  .producto-galeria, .card-body{
+    background-color: black;
+    color: whitesmoke;
+  }
+  .contactoTerJan {
+    border: 1px solid black;
+  }
+
+  /*agregamos vida a los elementos de contacto*/
+.lista {
+    list-style: none;/*elimina los puento de la lista*/
+    padding: 0px;/*elimina el padding predeterminado*/
+    margin: 0px;/*elimina el margen predeterminado*/
+}
+.lista .listaContacto {
+    text-align: start;
+    width: 250px;
+    padding: 10px;
+    cursor: pointer;/* Cambia el cursor a una mano para indicar que es interactivo */
+}
+.lista .listaContacto:hover {
+    background-color: rgb(160, 157, 157);
+    border: 1px solid black;
+    color: rgb(31, 31, 223);
+}
+.contactoBody {
+    background-color: whitesmoke;
+}
+.bodyIndex {
+    background-color: black;
+}
+.address {
+    text-align: end;/*movemos direccion al final del espacio asigando de la columan*/
+}
+.font-weight-bold, .noticiasJson {
+    color: white;
+}

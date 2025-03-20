@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/form.js"></script>
+    
+    <title>Javascript</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row navar-dark bg-dark p-2">
+            <div class="col w-100">
+                <h5 class="nombre">TerJan</h5>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item ">
+                      <a class="" href="../index.html">Index</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="producto.html">Product</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="button" aria-current="page" href="presupuesto.html">Budget</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="" href="contact.html">Contact</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <form id="miFormulario" onsubmit="return validar();"><!--Llama a la función validar() de JavaScript y devuelve su resultado-->
+           <div class="formulario">
+           <span class="datosPersonales">Formulario</span> 
+            <div class="col-sm-12 col-lg-6">
+              <label for="nombre">Nombre:</label><br>
+              <input class="form-control" type="text" id="nombre" name="nombre" maxlength="15" placeholder="Tu nombre">
+              <p id="errorNombre" class="error-message"></p> 
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <label for="apellidos">Apellidos:</label><br>
+              <input class="form-control" type="text" id="apellidos" name="apellidos" maxlength="40" placeholder="Tus apellidos">
+              <p id="errorApellidos" class="error-message"></p> 
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <label for="telefono">Teléfono de contacto:</label><br>
+              <input class="form-control" type="tel" id="telefono" name="telefono" maxlength="9" placeholder="Tu teléfono">
+              <p id="errorTelefono" class="error-message"></p> 
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <label for="email">Correo electrónico:</label><br>
+              <input class="form-control" type="email" id="email" name="email" placeholder="direccion@correo.com">
+              <p id="errorEmail" class="error-message"></p> 
+            </div>
+           </div>
+        
+        <div class="presupuesto" onchange="calcularPresupuesto()"><!--llamamos a la fuancion calcularPresupuesto() para que nuestros calculos funcionen. -->
+        <span class="presupuestoCostos">Presupuesto</span><!--etiqueta span para colocar cadena entre cuadro de div-->
+        <label for="producto">Elija un producto: </label>
+        <select name="producto" id="producto">
+            <option value="Seleccione" data-precio="0.00">--Seleccione--</option>
+            <option value="planEconimico" data-precio="200">Economic (€200)</option>
+            <option value="planSeguro" data-precio="400">Medium (€400)</option>
+            <option value="planPremium" data-precio="800">Premiun (€800)</option>
+        </select><br><br>
+
+        <label for="plazo">Ingrese un plazo(meses o dias)</label>
+        <input type="number" name="plazo" id="plazo" min="1" value="1">
+        <select name="unidad" id="unidad">
+            <option value="meses">Meses</option>
+            <option value="dias">Dias</option>
+        </select><br><br>
+      <fieldset>
+        <h6>Elija productos extras:</h6>
+        <input type="checkbox" id="seguroCirugia" name="extras" value="seguroCirugia" data-precio="300">
+        <label for="seguroCirugia">Seguro Cirugia (€300)</label>
+
+        <input type="checkbox" id="atencionPrivada" name="extras" value="atencionPrivada" data-precio="150">
+        <label for="atencionPrivada">Atencion Privada(€150)</label>
+
+        <input type="checkbox" id="seguroAccidente" name="extras" value="seguroAccidente" data-precio="450">
+        <label for="seguroAccidente">Seguro Accidente (€450)</label>
+
+        <input type="checkbox" id="seguroMuerte" name="extras" value="seguroMuerte" data-precio="500">
+        <label for="seguroMuerte">Seguro Muerte (€500)</label>
+      </fieldset><br>
+
+      <p id="descuento">Descueto €0.00</p>
+      <p id="presupuesto">Presupuesto Inicial €0.00</p>
+      <p id="presupuestoFinal">Presupuesto Final €0.00</p>
+    </div>
+    <div class="condiciones">
+        <span class="condicionesEnvio">Aceptar Terminos y condiciones Enviar presupuesto</span>
+        <div>
+            <label for="checkbox">Terminos y Condiciones</label>
+            <input type="checkbox" id="checkbox" name="checkbox">
+            <p id="errorCheckbox" class="error-message"></p> 
+        </div>
+        <div>
+            <button class="submit" type="submit">Enviar</button>
+            <button class="reset" type="reset">Reset</button> 
+        </div>
+    </div>
+    </form>
+    </div>
+      <div class="container-fluid">
+        <div class="row navar-dark bg-dark">
+          <div class="col-12">
+            <button class="mostrarAviso">Aviso Legal</button>
+            <div class="avisolegal">Terjan es el propietario y operador de la plataforma online que ofrece a los usuarios
+              información, recomendaciones y servicios relacionados con el ocio y los viajes, lo que incluye herramientas
+              para la búsqueda y/o reserva de hoteles, alquileres y otros alojamientos, atracciones y experiencias,
+              restaurantes, vuelos y cruceros, entre otros servicios relacionados con el ocio. En esta Declaración, nos
+              referiremos a ellos como nuestros “Servicios”.
+              La información que nos confía, así como la de los demás, mejora nuestra capacidad para ofrecer Servicios más
+              relevantes, personalizados y útiles. Sabemos que el hecho de compartir su información con nosotros es un acto
+              de confianza. Valoramos mucho su confianza y nos comprometemos a ofrecerle información, productos y servicios
+              útiles de acuerdo con la información que haya compartido con nosotros. Igualmente, y lo que quizá sea más
+              importante, nos comprometemos a respetar su privacidad mientras visite nuestro sitio web o utilice nuestros
+              Servicios, así como a ser transparentes sobre el uso que hacemos de la información que nos ha confiado.
+              Esta Declaración describe cómo obtenemos, utilizamos y tratamos su información. Le informa de sus derechos,
+              sobre cómo puede ejercerlos y cómo puede ponerse en contacto con nosotros. Lea esta Declaración detenidamente
+              para conocer nuestras prácticas en relación con la información y la privacidad. Al visitar nuestros sitios web
+              y las aplicaciones móviles relacionadas, así como otras plataformas online como los sitios web, las
+              aplicaciones y las redes sociales de nuestros afiliados, ya sea a través de un ordenador, un teléfono, una
+              tableta o un dispositivo similar (todos ellos denominados “Dispositivos”), reconoce y confirma que ha leído
+              esta Declaración.
+              Ofrecemos nuestros Servicios a usuarios en distintos países y territorios donde la legislación y las
+              costumbres son diferentes. En esta Declaración se ofrece una visión general de nuestras prácticas de
+              privacidad. Además, las Secciones de la 12 a la 15 de esta Declaración ofrecen información relevante y
+              específica a los usuarios que residen en determinadas regiones o países.<br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="container-fluid">
+        <div class="row navar-dark bg-dark p-2 footer">
+            <div class="col-sm-12 col-lg-6">
+               <p class="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sequi accusantium 
+                qui sit quam quos. Ducimus, error aspernatur harum, doloremque blanditiis eos 
+                mollitia quae voluptates deserunt a incidunt modi molestiae.</p> 
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <ul class="list-unstyled lista">
+                    <li>link</li>
+                    <li>Home</li>
+                    <li>Page</li>
+                    <li>News</li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-lg-3 d-grid d-flex flex-row">                
+              <!--d-grid" style="grid-template-columns: repeat(3, 1fr);"--logra que las img se coloquen horizontal-->
+                <a class="a-footer" href="https://www.tiktok.com/"><img src="../img-social-media/img-instagram.jpg"
+                    class="img-footer img-fluid" alt=""></a>
+                <a class="a-footer" href="https://www.tiktok.com/"><img src="../img-social-media/img.tiktok.png"
+                    class="img-footer img-fluid" alt=""></a>
+                <a class="a-footer" href="https://www.tiktok.com/"><img src="../img-social-media/img.twitter.png"
+                    class="img-footer img-fluid" alt=""></a>
+                <a class="a-footer" href="https://www.tiktok.com/"><img src="../img-social-media/img.facebook.jpg"
+                    class="img-footer img-fluid" alt=""></a>
+              </div>
+            <div class="col-sm-12 col-lg-9">
+              <h4 class="address">Address Los Rosas 1530 Phone 598498239 C.P: 2345</h4>
+            </div>
+        </div>
+    </div>
+<script src="../js/form.js"></script> 
+</body>
+</html>
