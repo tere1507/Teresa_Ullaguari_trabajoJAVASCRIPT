@@ -46,5 +46,3 @@ $(document).ready(function () {//esperar a que el documento este listo para lanz
     setTimeout(showPogramas, 2500)//programa por medio de setTimeout la ejecución de la función showPogramas para 
     //que se ejecute después de un retraso de 2.5 segundos
 });
-
-

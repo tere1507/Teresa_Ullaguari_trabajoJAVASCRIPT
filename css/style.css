@@ -69,17 +69,15 @@ img {
     float: left;
     align-items: center;
 }
-.mostrarAviso:hover + .avisolegal {
-    display: block;
+.avisoLegal {
+    color: white;
 }
-.avisolegal {
-    /* estilo de aviso legal*/
-    display: none;/*inicialmente oculto*/
-    border: 1px solid black;
-    color: aliceblue;
+.divAviso{
+    border: 1px solid white;
 }
-.mostrarAviso{
-    background-color: #0088ff;
+.divAvisoPC{
+    color: black;
+    background-color: whitesmoke;
 }
 .error {
     border: 1px solid purple;
