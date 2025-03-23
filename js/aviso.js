@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     boton.addEventListener('click', function(){
         if(!avisoMostrado){
-            fetch("./json/avisoLegal.json")
+            fetch("../json/avisoLegal.json")
             .then(response => response.json())
             .then(data => {
                 textoAviso.innerHTML = `<h2>${data.titulo}</h2>${data.contenido}`;
