@@ -162,3 +162,7 @@ img {
 .font-weight-bold, .noticiasJson {
     color: white;
 }
+.mapaStyle{
+    width:100vh;
+    height:400px;
+}
