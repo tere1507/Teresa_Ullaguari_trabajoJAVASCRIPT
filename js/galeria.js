@@ -66,15 +66,15 @@ const imgData = [//ccreamos un objeto array, cada par de llaves {} define un obj
 //creamos la funcion para crear la imagen.
 function createImagenCard(image) {
     const colDiv = document.createElement('div');//mediante el objeto global document creamos un elemenento('div') con el metodo createEelement
-    colDiv.classList.add('col-sm-12', 'col-lg-4');//se agrega por medio de la propiedad de HTML llamada classList  add el metodo de classList que agrega clases Css
+    colDiv.classList.add('col-sm-12','col-md-6', 'col-lg-4');//se agrega por medio de la propiedad de HTML llamada classList  add el metodo de classList que agrega clases Css
 
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card', 'img-1')
 
     const imgElement = document.createElement('img');
     imgElement.src = image.src;
-    imgElement.width = 250;//colocamos width para que las imagenes tengan un espacio reservado
-    imgElement.height = 250;
+    imgElement.width = 350;//colocamos width para que las imagenes tengan un espacio reservado
+    imgElement.height = 350;
     imgElement.classList.add('card-img-top');
     imgElement.alt = image.alt;//Se establece el contenido de texto del elemento <img> con el valor de la propiedad alt del objeto image.
 
